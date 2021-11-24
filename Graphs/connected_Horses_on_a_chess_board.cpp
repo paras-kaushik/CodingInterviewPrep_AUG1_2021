@@ -1,4 +1,3 @@
-/*APPLICATION OF CONNECTEED COMPONENTS */
 #include<iostream>
 #define p int(1e9+7)
 #define ll long long int
@@ -42,13 +41,7 @@ ll fac(ll t){
     for(int i=1;i<=t;i++){ ans=(ans*i)%p;}
     return ans%p;
 }
-bool isValidIndex(int i,int j){
-    // for n*m matrix,1 based indexing
-    return i>=1 && j>=1 && i<=n && j<=m;
-}
-
-ll dfs(int i,int j){ // recursive function calculating number of elements 
-//in a single component
+ll dfs(int i,int j){ // recursive function calculating number of elements in a single component
     ll t=1;// we have atleast one element in this component
     mat[i][j]=2;//making visited
         if(i-2>=1 && j+1<=m && mat[i-2][j+1]==1)t+=dfs(i-2,j+1);
